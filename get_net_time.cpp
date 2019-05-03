@@ -18,7 +18,10 @@ int main() {
 		}
 	}
 	else {
-		cout << "No network connection! Dumping contents of [terminal_feedback]..." << endl;
+		cout << "No network connection! Dumping contents of [error_list], followed by [terminal_feedback]..." << endl;
+		for (int i = 0; i < error_list.size(); i++) {
+			cout << error_list[i];
+		}
 		for (int i = 0; i < terminal_feedback.size(); i++) {
 			cout << terminal_feedback[i];
 		}
