@@ -19,12 +19,18 @@ int main() {
 	}
 	else {
 		cout << "No network connection! Dumping contents of [error_list], followed by [terminal_feedback]..." << endl;
-		for (int i = 0; i < error_list.size(); i++) {
-			cout << error_list[i];
+		if (error_list.size() > 0) {
+			for (int i = 0; i < error_list.size(); i++) {
+				cout << error_list[i];
+			}
 		}
-		for (int i = 0; i < terminal_feedback.size(); i++) {
-			cout << terminal_feedback[i];
+		else cout << endl << endl << "Nothing in [error_list]!" << endl << endl;
+		if (terminal_feedback.size() > 0) {
+			for (int i = 0; i < terminal_feedback.size(); i++) {
+				cout << terminal_feedback[i];
+			}
 		}
+		else cout << endl << endl << "Nothing in [terminal_feedback]!" << endl << endl;
 		return 1;
 	}
 	string get_time = "sudo date -s \"$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z\"";
